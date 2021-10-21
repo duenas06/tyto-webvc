@@ -104,7 +104,7 @@ body {
   padding: 10px 0;
   text-align: center;
   border-radius: 10px;
-  background-color: white;
+  background-color: #26C6DA;
   outline: none;
   border: none;
   font-size: 1.1rem;
@@ -113,4 +113,5 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
+  color: white;
 }

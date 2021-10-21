@@ -196,7 +196,7 @@ const ChannelForm = ({ initFunc }) => {
   const [appId, setappId] = useState('')
   return (
     <form className='join'>
-      <input type="text" placeholder="Enter App Id" onChange={(e) => { setappId(e.target.value) }} />
+      {/* <input type="text" placeholder="Enter App Id" onChange={(e) => { setappId(e.target.value) }} /> */}
       <input type="text" placeholder='Enter Channel Name' onChange={(e) => setChannelName(e.target.value)} />
       <button onClick={(e) => { e.preventDefault(); initFunc(channelName, appId); }}>Join Call</button>
     </form>
