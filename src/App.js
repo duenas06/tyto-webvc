@@ -16,7 +16,7 @@ const Content = () => {
   const rtc = useClient()
   const options = {
     // Pass your app ID here.
-    appId: "d7bbb2e36b79475dbef528f642cd9abe",
+    appId: "cd305ea814d54bdf87aa48ffe4af8363",
     // Set the channel name.
     channel: "TYTO",
     // Pass a token of App Certificate.
