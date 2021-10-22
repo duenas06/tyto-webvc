@@ -20,7 +20,7 @@ const Content = () => {
     // Set the channel name.
     channel: "TYTO",
     // Pass a token of App Certificate.
-    token: "d7bbb2e36b79475dbef528f642cd9abe",
+    token: "006cd305ea814d54bdf87aa48ffe4af8363IAAo05ER+80pkZB5G4erPD1hL50gnXdpnbR1IXF8mLTHN4eW8j4AAAAAEACHtvL/euxzYQEAAQB17HNh",
   };
 
   let init = async (name, appId) => {
