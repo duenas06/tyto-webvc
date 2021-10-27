@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import AgoraRTC from "agora-rtc-sdk-ng"
-import { GlobalProvider, useClient, useStart, useUsers } from './GlobalContext';
+import { GlobalProvider, useClient, useStart, useUsers, useAppID, useChannel, useToken } from './GlobalContext';
 
-const App = () => {
+export default function App() {
   return (
     <GlobalProvider>
       <Content />
@@ -20,13 +20,13 @@ const Content = () => {
     // Set the channel name.
     channel: "TYTO",
     // Pass a token of App Certificate.
-    token: "006cd305ea814d54bdf87aa48ffe4af8363IAAo05ER+80pkZB5G4erPD1hL50gnXdpnbR1IXF8mLTHN4eW8j4AAAAAEACHtvL/euxzYQEAAQB17HNh",
+    token:  "006cd305ea814d54bdf87aa48ffe4af8363IABNp+ndP59n73J14dg8cISNJFHE4aETJ6Ffct7T0NJSOIeW8j4AAAAAEACHtvL/bet3YQEAAQBr63dh",
   };
 
-  let init = async (name, appId) => {
+  let init = async (name, appId, token) => {
     rtc.current.client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
     initClientEvents()
-    const uid = await rtc.current.client.join(appId, name, options.token, null);
+    const uid = await rtc.current.client.join(appId, name, token, null);
     // Create an audio track from the audio sampled by a microphone.
     rtc.current.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
     // Create a video track from the video captured by a camera.
@@ -192,18 +192,24 @@ export const Controls = ({ user }) => {
 
 const ChannelForm = ({ initFunc }) => {
 
-  const [channelName, setChannelName] = useState('')
-  const [appId, setappId] = useState('')
+  const [appId, setAppId] = useAppID();
+  const [token, setToken] = useToken();
+  const [channelName, setChannelName] = useChannel();
+  const options = {
+    // Pass your app ID here.
+    appId: "cd305ea814d54bdf87aa48ffe4af8363",
+    // Set the channel name.
+    channel: "TYTO",
+
+    token:  "006cd305ea814d54bdf87aa48ffe4af8363IABPLBvX1t12kXfflA0x4FflH9iSiiWben0dm7a/fdS7oYeW8j4AAAAAEACHtvL/wPl5YQEAAQC/+Xlh"
+  };
   return (
     <form className='join'>
-      <input type="text" placeholder="Enter App Id" onChange={(e) => { setappId(e.target.value) }} />
-      <input type="text" placeholder='Enter Channel Name' onChange={(e) => setChannelName(e.target.value)} />
-      <button onClick={(e) => { e.preventDefault(); initFunc(channelName, appId); }}>Join Call</button>
+      <button onClick={(e) => { e.preventDefault(); initFunc(options.channel, options.appId, options.token);}}>Join Call</button>
     </form>
   );
 
 }
 
-export default App;
 
 
