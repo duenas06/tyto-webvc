@@ -20,7 +20,7 @@ const Content = () => {
     // Set the channel name.
     channel: "TYTO",
     // Pass a token of App Certificate.
-    token:  "006cd305ea814d54bdf87aa48ffe4af8363IAA05MRK1tj9ddcad3EQ2s7fR/QMQTwPs4Ps+jGU2YFxx4eW8j4AAAAAEACHtvL/Mn57YQEAAQAxfnth",
+    token: "006cd305ea814d54bdf87aa48ffe4af8363IAA05MRK1tj9ddcad3EQ2s7fR/QMQTwPs4Ps+jGU2YFxx4eW8j4AAAAAEACHtvL/Mn57YQEAAQAxfnth",
   };
 
   let init = async (name, appId, token) => {
@@ -191,17 +191,13 @@ export const Controls = ({ user }) => {
 
 
 const ChannelForm = ({ initFunc }) => {
-
-  const [appId, setAppId] = useAppID();
-  const [token, setToken] = useToken();
-  const [channelName, setChannelName] = useChannel();
   const options = {
     // Pass your app ID here.
     appId: "cd305ea814d54bdf87aa48ffe4af8363",
     // Set the channel name.
     channel: "TYTO",
 
-    token:  "006cd305ea814d54bdf87aa48ffe4af8363IABPLBvX1t12kXfflA0x4FflH9iSiiWben0dm7a/fdS7oYeW8j4AAAAAEACHtvL/wPl5YQEAAQC/+Xlh"
+    token:  "006cd305ea814d54bdf87aa48ffe4af8363IAA05MRK1tj9ddcad3EQ2s7fR/QMQTwPs4Ps+jGU2YFxx4eW8j4AAAAAEACHtvL/Mn57YQEAAQAxfnth"
   };
   return (
     <form className='join'>
