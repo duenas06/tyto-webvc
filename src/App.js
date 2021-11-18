@@ -197,7 +197,7 @@ const ChannelForm = ({ initFunc }) => {
     // Set the channel name.
     channel: "TYTO",
 
-    token:  "006cd305ea814d54bdf87aa48ffe4af8363IACfQzEjKBJSQwW3giI/wOPzTqJDBbixgx1oa/fjQrWAA4eW8j4AAAAAEAAAIFGKk0aCYQEAAQCSRoJh"
+    token:  "006cd305ea814d54bdf87aa48ffe4af8363IAClcgCzsN6N/idypB2vaRYNTEO3YxFhVOAQmmdLq7SzWYeW8j4AAAAAEAAxeNCcpT+XYQEAAQClP5dh"
   };
   return (
     <form className='join'>
